@@ -45,7 +45,7 @@ pip install -i https://test.pypi.org/simple/ spezi-data-pipeline
 - **Converting and Structuring FHIR Data**: Use `ResourceCreator` and its subclasses to convert Firestore documents to FHIR resources.
 - **Flattening Nested FHIR Data**: Utilize `ResourceFlattener` and its specific implementations to transform data into flat DataFrames.
 - **Processing Data**: Apply `FHIRDataProcessor` for filtering, selecting, and general data processing tasks.
-- **Exploring and Visualizing Data**: Leverage `DataExplorer` and `ECGExplorer` to create visualizations and explore your data.
+- **Exploring and Visualizing Data**: Leverage `DataExplorer`, `ECGExplorer`, and `QuestionnaireResponseExplorer` to create visualizations and explore your data.
 - **Exporting Data**: Use `DataExporter` to save processed data and plots.
 
 
