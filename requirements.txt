@@ -1,15 +1,4 @@
-pandas
-numpy
-matplotlib
-firebase-admin
-fhir.resources
-pytest>=7.0
-coverage
-pytest-cov>=2.10.0
-toml
+--extra-index-url https://test.pypi.org/simple/
+spezi-data-pipeline==0.1.0b1
 # Documentation links:
-# pandas: https://pypi.org/project/pandas/
-# numpy: https://numpy.org/doc/stable/user/install.html
-# matplotlib: https://pypi.org/project/matplotlib/
-# firebase_admin: https://firebase.google.com/docs/admin/setup
-# fhir.resources: https://pypi.org/project/fhir.resources/
+# spezi-data-pipeline: https://test.pypi.org/project/spezi-data-pipeline/0.1.0b1/

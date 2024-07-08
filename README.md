@@ -10,101 +10,44 @@ SPDX-License-Identifier: MIT
 
 # Spezi Data Pipeline Template
 
-[![Build and Test](https://github.com/StanfordSpezi/SpeziDataPipelineTemplate/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/StanfordSpezi/SpeziDataPipelineTemplate/actions/workflows/build-and-test.yml)
-[![codecov](https://codecov.io/gh/StanfordSpezi/SpeziDataPipelineTemplate/branch/main/graph/badge.svg)](https://codecov.io/gh/StanfordSpezi/SpeziDataPipelineTemplate)
 <a target="_blank" href="https://colab.research.google.com/github/StanfordSpezi/SpeziDataPipelineTemplate/blob/main/SpeziDataPipelineTemplate.ipynb">
 <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 
-The Spezi Data Pipeline offers a comprehensive suite of tools designed to facilitate the management, analysis, and visualization of healthcare data from Firebase Firestore. By adhering to the Fast Healthcare Interoperability Resources (FHIR) standards, this platform ensures that data handling remains robust, standardized, and interoperable across different systems and software.
+The Spezi Data Pipeline Template repository is a demonstration of how the `spezi_data_pipeline` Python package can be used for managing, analyzing, and visualizing healthcare data from Firebase Firestore. This template showcases practical examples and use cases, helping users understand how to integrate and utilize the package in their own projects. 
+
+The `spezi_data_pipeline` package is open-source and available [here](https://github.com/StanfordSpezi/SpeziDataPipeline).
 
 ## Overview
 
-The Spezi Data Pipeline is engineered to improve workflows associated with data accessibility and analysis in healthcare environments. It supports [82 HKQuantityTypes](https://github.com/StanfordBDHG/HealthKitOnFHIR/blob/main/Sources/HealthKitOnFHIR/HealthKitOnFHIR.docc/SupportedHKQuantityTypes.md) and ECG data recordings and is capable of performing functions such as selection, storage, downloading, basic filtering, statistical analysis, and graphical representation of data. By facilitating the structured export of data from Firebase and incorporating FHIR standards, the pipeline enhances interoperability and streamlines data operations.
+The Spezi Data Pipeline Template is designed to improve workflows associated with data accessibility and analysis in healthcare environments. By following this template, users can see how to handle healthcare data adhering to Fast Healthcare Interoperability Resources (FHIR) standards, ensuring robust, standardized, and interoperable data handling across different systems and software.
 
-## Package Structure
+## Example Notebooks
 
-The SpeziDataPipelineTemplate is organized into several directories, each serving a specific function as part of the overall application. This guide will walk you through the package structure, highlighting the key components and their usage based on your needs and challenges.
+This repository includes example Jupyter notebooks that demonstrate:
 
-1. `data_access/`
+- How to connect to a Firebase Firestore database and fetch data.
+- How to process and visualize healthcare data using the `spezi_data_pipeline` package.
+- How to export processed data for further analysis or reporting.
 
-_FirebaseFHIRAccess_
-- Purpose: Connects to a Firebase Firestore database and fetches the data stored as FHIR resources.
-- Usage: If you need to retrieve healthcare data from a Firestore database, this class provides methods to connect to the database and fetch data based on LOINC codes.
+These notebooks are intended to serve as a starting point for users to build their own data pipeline solutions using the `spezi_data_pipeline` package.
 
-_ResourceCreator_
-- Purpose: Creates FHIR resource objects from Firestore documents in FHIR format.
-- Usage: Use this when you need to convert raw FHIR-compatible Firestore documents into structured FHIR resources.
+## Install the `spezi_data_pipeline`
 
-2. `data_flattening/`
-
-_ResourceFlattener_
-- Purpose: Transforms nested FHIR resources objects into flat data structures suitable for analysis.
-- Usage: Essential for converting complex FHIR resources into a more analyzable DataFrame format.
-
-3. `data_processing/`
-
-_FHIRDataProcessor_
-- Purpose: Processes and filters flattened FHIR data.
-- Usage: Ideal for performing operations like filtering outliers, selecting data by user or date, averaging data by date, and general data processing tasks.
-
-_CodeProcessor_
-- Purpose: Handles processing related to code mappings.
-- Usage: Use this when you need to map codes to meaningful representations. This class serves as a central repository for the mappings of LOINC codes to their display names, processing functions, and default value ranges for outlier filtering.
-
-4. `data_exploration/`
-
-_DataExplorer_
-- Purpose: Provides tools for visualizing and exploring FHIR data.
-- Usage: Useful for generating plots and visual representations of your data to gain insights, and detect user inactivity and missing values.
-
-_ECGExplorer_
-- Purpose: Specialized in visualizing ECG data.
-- Usage: Use this for detailed ECG data analysis and visualization.
-
-5. `data_export/`
-
-_DataExporter_
-- Purpose: Exports processed and visualized data to various formats.
-- Usage: When you need to save your processed data or visualizations, this class provides methods to export to CSV and save plots in JPEG/PNG.
-
-
-### How to Use Based on Your Needs
-- **Downloading Data from Firestore**: Start with FirebaseFHIRAccess to connect and fetch data.
-- **Converting and Structuring FHIR Data**: Use ResourceCreator and its subclasses to convert Firestore documents to FHIR resources.
-- **Flattening Nested FHIR Data**: Utilize ResourceFlattener and its specific implementations to transform data into flat DataFrames.
-- **Processing Data**: Apply FHIRDataProcessor for filtering, selecting, and general data processing tasks.
-- **Exploring and Visualizing Data**: Leverage DataExplorer and ECGExplorer to create visualizations and explore your data.
-- **Exporting Data**: Use DataExporter to save processed data and plots.
-
-
-## Dependencies
-
-Required Python packages are included in the requirements.txt file and are outlined in the list below:
-
-**[pandas](https://pypi.org/project/pandas/)**
-
-**[numpy](https://numpy.org/doc/stable/user/install.html)**
-
-**[matplotlib](https://pypi.org/project/matplotlib/)**
-
-**[firebase_admin](https://firebase.google.com/docs/admin/setup)**
-
-**[fhir.resources](https://pypi.org/project/fhir.resources/)**
-
-You can install all required external packages using pip by running the following command in your terminal:
+You can install the `spezi_data_pipeline` package using pip by running the following command in your terminal:
 
 ```bash
-pip install -r requirements.txt
+pip install -i https://test.pypi.org/simple/ spezi-data-pipeline
 ```
 
-## Generate Service Account Key
+### How to Use Based on Your Needs
+- **Downloading Data from Firestore**: Start with `FirebaseFHIRAccess` to connect and fetch data.
+- **Converting and Structuring FHIR Data**: Use `ResourceCreator` and its subclasses to convert Firestore documents to FHIR resources.
+- **Flattening Nested FHIR Data**: Utilize `ResourceFlattener` and its specific implementations to transform data into flat DataFrames.
+- **Processing Data**: Apply `FHIRDataProcessor` for filtering, selecting, and general data processing tasks.
+- **Exploring and Visualizing Data**: Leverage `DataExplorer`, `ECGExplorer`, and `QuestionnaireResponseExplorer` to create visualizations and explore your data.
+- **Exporting Data**: Use `DataExporter` to save processed data and plots.
 
-To interact with Firebase services like Firestore or the Realtime Database, ensure your Firebase project is configured correctly and possesses the necessary credentials file (usually a .JSON file).
-
-Visit the "Project settings" in your Firebase project, navigate to the "Service accounts" tab, and generate a new private key by clicking on "Generate new private key." Upon confirmation, the key will be downloaded to your system.
-
-This .JSON file contains your service account credentials and is used to authenticate your application with Firebase.
 
 ## Usage Example
 
