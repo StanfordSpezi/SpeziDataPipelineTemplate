@@ -16,7 +16,7 @@ SPDX-License-Identifier: MIT
 
 The Spezi Data Pipeline Template repository is a demonstration of how the `spezi_data_pipeline` Python package can be used for managing, analyzing, and visualizing healthcare data from Firebase Firestore. This template showcases practical examples and use cases, helping users understand how to integrate and utilize the package in their own projects. 
 
-The Spezi Data Pipeline is open-source and available [here](https://github.com/StanfordSpezi/SpeziDataPipeline).
+The code and documentation of the `spezi_data_pipeline` package are open-source and available [here](https://github.com/StanfordSpezi/SpeziDataPipeline).
 
 ## Overview
 
@@ -41,12 +41,12 @@ pip install -i https://test.pypi.org/simple/ spezi-data-pipeline
 ```
 
 ### How to Use Based on Your Needs
-- **Downloading Data from Firestore**: Start with FirebaseFHIRAccess to connect and fetch data.
-- **Converting and Structuring FHIR Data**: Use ResourceCreator and its subclasses to convert Firestore documents to FHIR resources.
-- **Flattening Nested FHIR Data**: Utilize ResourceFlattener and its specific implementations to transform data into flat DataFrames.
-- **Processing Data**: Apply FHIRDataProcessor for filtering, selecting, and general data processing tasks.
-- **Exploring and Visualizing Data**: Leverage DataExplorer and ECGExplorer to create visualizations and explore your data.
-- **Exporting Data**: Use DataExporter to save processed data and plots.
+- **Downloading Data from Firestore**: Start with `FirebaseFHIRAccess` to connect and fetch data.
+- **Converting and Structuring FHIR Data**: Use `ResourceCreator` and its subclasses to convert Firestore documents to FHIR resources.
+- **Flattening Nested FHIR Data**: Utilize `ResourceFlattener` and its specific implementations to transform data into flat DataFrames.
+- **Processing Data**: Apply `FHIRDataProcessor` for filtering, selecting, and general data processing tasks.
+- **Exploring and Visualizing Data**: Leverage `DataExplorer` and `ECGExplorer` to create visualizations and explore your data.
+- **Exporting Data**: Use `DataExporter` to save processed data and plots.
 
 
 ## Usage Example
