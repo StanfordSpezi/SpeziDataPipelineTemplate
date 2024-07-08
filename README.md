@@ -14,7 +14,9 @@ SPDX-License-Identifier: MIT
 <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 
-The Spezi Data Pipeline Template repository is a demonstration of how the `spezi_data_pipeline` Python package can be used for managing, analyzing, and visualizing healthcare data from Firebase Firestore. This template showcases practical examples and use cases, helping users understand how to integrate and utilize the package in their own projects.
+The Spezi Data Pipeline Template repository is a demonstration of how the `spezi_data_pipeline` Python package can be used for managing, analyzing, and visualizing healthcare data from Firebase Firestore. This template showcases practical examples and use cases, helping users understand how to integrate and utilize the package in their own projects. 
+
+The Spezi Data Pipeline is open-source and available [here](https://github.com/StanfordSpezi/SpeziDataPipeline)
 
 ## Overview
 
@@ -36,7 +38,7 @@ You can install the `spezi_data_pipeline` package using pip by running the follo
 
 ```bash
 pip install -i https://test.pypi.org/simple/ spezi-data-pipeline
-
+```
 
 ### How to Use Based on Your Needs
 - **Downloading Data from Firestore**: Start with FirebaseFHIRAccess to connect and fetch data.
